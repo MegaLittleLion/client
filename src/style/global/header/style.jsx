@@ -14,6 +14,16 @@ const Header = styled.h1`
         font-size: 30px;
 
     }
+<<<<<<< Updated upstream
+=======
+    #signupbutton, #loginbutton{
+        text-decoration: none;
+        color: #666565;
+        font-size: 120%;
+        margin-bottom: 10px;
+    }
+
+>>>>>>> Stashed changes
 `
 
 export default Header;
