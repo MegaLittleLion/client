@@ -1,9 +1,23 @@
 import { Title } from './style'
 import { getMovies } from '../../apis/mainApis/apis';
+import { useEffect, useState } from 'react';
 
 function Body() {
-    getMovies();
+    const [movies, setMovies] = useState([]);
+    
+    const takeMovies = async () => {
+        const data = await getMovies();
+        setMovies(data);
+    };
 
+    useEffect(() => {
+        takeMovies();
+    }, []);
+
+    // api를 통해 영화 리스트를 가져온 이후
+    if (movies.length !== 0){
+        console.log(movies);
+    }
 
     return (
 
@@ -11,9 +25,10 @@ function Body() {
 
             <div id='mainpage_total_box'>
                 <h1 id='mainpage_recent_movie_box'>
-                    <p id='mainpage_recent_movie_article'>오늘의 영화</p>
+                    <p id='mainpage_recent_movie_article'>🎥 오늘의 영화 🎥</p>
 
                     <div id= 'mainpage_api'>
+
                         
 
                     </div>
