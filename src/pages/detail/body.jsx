@@ -101,7 +101,7 @@ function Body() {
             <Comment>
                 <form onSubmit={handleOnSubmit}>
                     <div class='v-line'>
-                        <h2>댓글</h2>
+                        <h2 id='commentTitle'>댓글</h2>
                     </div>
                     {comment.length === 0 ? (
                         <p>댓글이 없지롱</p>

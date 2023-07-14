@@ -40,6 +40,9 @@ export const Comment = styled.div`
     .username{
         margin-left: 20px;
     }
+    #commentTitle {
+        margin-left: 10px;
+    }
 `
 
 export const Title = styled.div`
