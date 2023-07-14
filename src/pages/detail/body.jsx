@@ -4,6 +4,22 @@ import { useState, useEffect } from "react";
 import { Staff } from "./style";
 import { Infos } from "./style";
 import { Whole } from "./style";
+import { Comment } from "./style";
+
+
+
+function People({ people }) {
+    return (
+        <div style={{ marginRight: '15px' }}>
+            <img src={people.image_url}></img>
+
+            <p>{people.name}</p>
+            <p>{people.role}</p>
+        </div>
+    );
+}
+
+
 
 function Body() {
     const [data, setData] = useState('');
@@ -15,13 +31,18 @@ function Body() {
         setStaff(nowDetail[1]);
     }
 
+
     useEffect(() => {
         getDetail();
     }, [])
 
-    for (let i = 0; i < staff.length; i++){
-        console.log(staff[i].name); // 0~9까지 출력
-    }
+    console.log(staff)
+
+    // for (let i = 0; i < staff.length; i++){
+    //     console.log(staff[i].name);
+    //     const result = staff[i].name
+    //     const staffInfo = document.getElementById('staffInfo');
+    // }
 
 
     return (
@@ -46,13 +67,25 @@ function Body() {
                 </div>
             </Infos>
             <Staff>
+                <article id="staffInfo">
+
+                </article>
                 <h2>인물 정보</h2>
-                <img
-                    src="https://search.pstatic.net/common/?src=http%3A%2F%2Fimgmovie.naver.net%2Fmdi%2Fpi%2F000000056%2FPM5699_115943_000.jpg&type=u111_139&quality=95">
-                </img>
-                <p>이름</p>
-                <p>역할</p>
+                <div style={{ display: 'flex' }}>
+                    {staff.length > 0 && staff.map(people => (
+                        <People people={people} key={people.name} />
+                    ))}
+                </div>
             </Staff>
+            <Comment>
+                <form>
+                    <h2>댓글</h2>
+                    <input
+                        placeholder="댓글을 입력하세요."
+                    />
+                    <button>댓글</button>
+                </form>
+            </Comment>
 
         </Whole>
     );

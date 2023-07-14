@@ -4,10 +4,11 @@ import { Text } from "./style";
 
 function Body() {
     return (
-        <Footer>
-            <Title>
+        <Footer style={{display:'flex'}}>
+            <h2>
                 Mega little lion
-            </Title>
+            </h2>
+            <p>이용약관 | 개인정보처리방침 | 고객센터</p>            
         </Footer>
     );
 };
