@@ -32,9 +32,10 @@ export const Title = styled.h1`
     #mainpage_popular_movie_box{
 
     }
-
+    #mainpage_api{
+        
+    }
+    #mainpage_api div{
+        display: flex;
+    }
 `
-
-
-/* #FFD732 */
-
