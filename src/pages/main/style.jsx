@@ -8,16 +8,18 @@ export const Title = styled.h1`
 
         margin: 50px;
         margin-top: 5px;
-        background-color: #FFD732;
+        background-color: #FFF8DC;
 
     }
-    #mainpage_recent_movie_box{
+    #mainpage_movie_box{
         margin-top: 0px;
         margin-bottom: 5px;
 
     }
-    #mainpage_recent_movie_article{
+    #mainpage_movie_article{
         margin: 0px;
+
+        
         font-size: 35px;
         color: #343101;
 
@@ -35,7 +37,27 @@ export const Title = styled.h1`
     #mainpage_api{
         
     }
+
     #mainpage_api div{
         display: flex;
+        justify-content: space-around;
+        div{
+            transition: all 0.3s;
+            display: block;
+            border-radius: 15px;
+            width: 200px;
+                h1{ 
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-size: 16px;
+                    font-weight: bold;
+                    text-align: center;
+                    width:100%;
+                }
+            
+        }
+        div:hover{
+            background-color: #FFD732;
+        }
     }
 `
