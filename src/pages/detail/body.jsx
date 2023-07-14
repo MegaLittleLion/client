@@ -7,17 +7,23 @@ import { Whole } from "./style";
 
 function Body() {
     const [data, setData] = useState('');
+    const [staff, setStaff] = useState('');
 
     const getDetail = async () => {
         const nowDetail = await detailApi();
-        setData(nowDetail);
+        setData(nowDetail[0]);
+        setStaff(nowDetail[1]);
     }
 
     useEffect(() => {
         getDetail();
     }, [])
 
-    console.log(data);
+    for (let i = 0; i < staff.length; i++){
+        console.log(staff[i].name); // 0~9까지 출력
+    }
+
+
     return (
         <Whole>
             <Title>
@@ -39,8 +45,8 @@ function Body() {
                     <p>{data.summary}</p>
                 </div>
             </Infos>
-            <h2>인물 정보</h2>
             <Staff>
+                <h2>인물 정보</h2>
                 <img
                     src="https://search.pstatic.net/common/?src=http%3A%2F%2Fimgmovie.naver.net%2Fmdi%2Fpi%2F000000056%2FPM5699_115943_000.jpg&type=u111_139&quality=95">
                 </img>

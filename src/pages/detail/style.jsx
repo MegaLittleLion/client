@@ -15,12 +15,18 @@ export const Title = styled.div`
 
 export const Infos = styled.div`
     display:flex;
+    margin-top: 50px;
     div{
         margin-left:50px;
     };
+    img{
+        height:400px;
+        width:auto;
+    }
 `
 
 export const Staff = styled.div`
+    margin-top: 50px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     
 `
