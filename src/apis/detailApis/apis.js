@@ -6,7 +6,7 @@ const serverApi = axios.create({
     }
 });
 
-export const detailApi = async () => {
+export const detailApi = async (movieid) => {
 
     let detail = [];
     let staff = [];
@@ -16,7 +16,21 @@ export const detailApi = async () => {
     await serverApi.get(`https://api.hufs-likelion-movie.kro.kr/movies/1`).then((response) => {
         detail = response.data;
         staff = response.data.staff;
-        console.log(staff);
+
+        // console.log(staff_img);
     })
-    return [detail, staff];
+    return [detail, staff, staff_name, staff_role, staff_img];
 }
+
+export const commentApi = async () => {
+    let comment = [];
+
+    await serverApi.get(`https://api.hufs-likelion-movie.kro.kr/movie/comments/1`).then((response) => {
+        comment = response.data;
+
+        // console.log(staff_img);
+    })
+    return comment;
+}
+
+// https://port-0-test-mv-kvmh2mlk2besp7.sel4.cloudtype.app/movie/${movieid}

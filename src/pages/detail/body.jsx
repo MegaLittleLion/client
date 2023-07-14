@@ -1,5 +1,5 @@
 import { Title } from "./style";
-import { detailApi } from "../../apis/detailApis/apis";
+import { detailApi, commentApi } from "../../apis/detailApis/apis";
 import { useState, useEffect } from "react";
 import { Staff } from "./style";
 import { Infos } from "./style";
@@ -7,14 +7,13 @@ import { Whole } from "./style";
 import { Comment } from "./style";
 
 
-
 function People({ people }) {
     return (
         <div style={{ marginRight: '15px' }}>
-            <img src={people.image_url}></img>
+            <img src={people.image_url} style={{ marginTop: '10px' }}></img>
 
-            <p>{people.name}</p>
-            <p>{people.role}</p>
+            <p style={{ fontWeight: 'bold', textAlign: 'center' }}>{people.name}</p>
+            <p style={{ textAlign: 'center' }}>{people.role}</p>
         </div>
     );
 }
@@ -24,6 +23,8 @@ function People({ people }) {
 function Body() {
     const [data, setData] = useState('');
     const [staff, setStaff] = useState('');
+    const [comment, setComment] = useState('');
+
 
     const getDetail = async () => {
         const nowDetail = await detailApi();
@@ -31,12 +32,18 @@ function Body() {
         setStaff(nowDetail[1]);
     }
 
+    const getComment = async () => {
+        const nowComment = await commentApi();
+        setComment(nowComment);
+    }
+
 
     useEffect(() => {
         getDetail();
+        getComment();
     }, [])
 
-    console.log(staff)
+    // console.log(staff)
 
     // for (let i = 0; i < staff.length; i++){
     //     console.log(staff[i].name);
@@ -45,32 +52,46 @@ function Body() {
     // }
 
 
+    const handleOnSubmit = (e) => {
+        e.preventDefault();
+        // console.log(e.target[0].value);
+        const comment = e.target[0].value;
+    }
+
     return (
         <Whole>
             <Title>
-                <h1>{data.title_kor}</h1>
-                <h1>{data.title_eng}</h1>
+                <div class='v-line'>
+                    <div style={{ marginLeft: '10px' }}>
+                        <h1>{data.title_kor}</h1>
+                        <h1>{data.title_eng}</h1>
+                    </div>
+                </div>
             </Title>
             <Infos>
                 <img
                     src="https://movie-phinf.pstatic.net/20220714_114/1657780525423jmTpw_JPEG/movie_image.jpg?type=m203_290_2">
                 </img>
-                <div >
-                    <p>관람객 평점: {data.rating_aud}</p>
-                    <p>평론가 평점: {data.rating_cri}</p>
-                    <p>네티즌 평점: {data.rating_net}</p>
-                    <p>장르: {data.genre}</p>
-                    <p>상영 시간: {data.showtimes}</p>
-                    <p>개봉일: {data.release_date}</p>
-                    <h2>줄거리</h2>
-                    <p>{data.summary}</p>
+                <div class='v-line'>
+                    <div>
+                        <p>- 관람객 평점: {data.rating_aud}</p>
+                        <p>- 평론가 평점: {data.rating_cri} </p>
+                        <p>- 네티즌 평점: {data.rating_net}</p>
+                        <p>- 장르: {data.genre}</p>
+                        <p>- 상영 시간: {data.showtimes}</p>
+                        <p>- 개봉일: {data.release_date}</p>
+                        <h2>줄거리</h2>
+                        <p>{data.summary}</p>
+                    </div>
                 </div>
             </Infos>
             <Staff>
                 <article id="staffInfo">
 
                 </article>
-                <h2>인물 정보</h2>
+                <div class='v-line'>
+                    <h2 style={{ marginLeft: '10px' }}>인물 정보</h2>
+                </div>
                 <div style={{ display: 'flex' }}>
                     {staff.length > 0 && staff.map(people => (
                         <People people={people} key={people.name} />
@@ -78,12 +99,23 @@ function Body() {
                 </div>
             </Staff>
             <Comment>
-                <form>
-                    <h2>댓글</h2>
-                    <input
+                <form onSubmit={handleOnSubmit}>
+                    <div class='v-line'>
+                        <h2>댓글</h2>
+                    </div>
+                    {comment.length === 0 ? (
+                        <p>댓글이 없지롱</p>
+                    ) : (
+                        <div class='Oncomment'>
+                            <p class="username                                                                      ">{comment.username}</p>
+                            <p>{comment.post}</p>
+                        </div>
+                    )}
+                    <input 
+                        id='inputed'
                         placeholder="댓글을 입력하세요."
                     />
-                    <button>댓글</button>
+                    <button type="submit">댓글</button>
                 </form>
             </Comment>
 
