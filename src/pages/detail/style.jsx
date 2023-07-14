@@ -1,3 +1,9 @@
 import styled from 'styled-components';
 
-export const title = styled.h1;
+export const Title = styled.h1`
+
+`
+
+export const Poster = styled.img`
+    
+`
