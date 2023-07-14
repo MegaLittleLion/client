@@ -5,7 +5,7 @@ export const BodyDiv = styled.div`
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         p{  
             display: block;
-            width:30%;
+            width:50%;
             margin:0 auto;
             text-align: right;
             font-size: 150%;

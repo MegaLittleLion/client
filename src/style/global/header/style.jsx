@@ -34,6 +34,8 @@ const Header = styled.h1`
     #signupbutton, #loginbutton{
         text-decoration: none;
         color: #666565;
+        font-size: 120%;
+        margin-bottom: 10px;
     }
 
 `
