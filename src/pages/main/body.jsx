@@ -76,7 +76,7 @@ function Body() {
 
             <div id='mainpage_total_box'>
                 <h1 id='mainpage_movie_box'>
-                    <p id='mainpages_movie_article'>🎥 오늘의 영화 🎥</p>
+                    <p id='mainpage_movie_article'>🎥 오늘의 영화 🎥</p>
 
                     <div id= 'mainpage_api'>
 

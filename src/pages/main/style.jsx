@@ -53,6 +53,8 @@ export const Title = styled.h1`
                     font-weight: bold;
                     text-align: center;
                     width:100%;
+
+                    color: #595959
                 }
             
         }
