@@ -1,11 +1,10 @@
 import { BodyDiv } from "./style";
-import { testApi } from "../../apis/loginApis/apis";
+import { loginApi } from "../../apis/loginApis/apis";
 function Body() {
     
     const handleSubmit = async(e) => {
         e.preventDefault();
-        const testList = await testApi();
-        console.log(testList);
+        await loginApi();
     }
 
     return(

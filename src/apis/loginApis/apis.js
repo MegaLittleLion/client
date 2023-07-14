@@ -6,10 +6,9 @@ const serverApi = axios.create({
     }
 });
 
-export const testApi = async () => {
-    let test = [];
+// 로그인 api
+export const loginApi = async () => {
     await serverApi.get(`https://api.hufs-likelion-movie.kro.kr/movies`).then((response) => {
-        test = response.data.movies;
+        console.log(response);
     })
-    return test;
 }
