@@ -13,10 +13,10 @@ function Body() {
             </h1>
 
             <h2>
-                <Link id = 'loginbutton'>
+                <Link to="/login" id='loginbutton'>
                     로그인
                 </Link>
-                <Link id = 'signupbutton'>
+                <Link to="/signup" id='signupbutton'>
                     회원가입
                 </Link>
 
