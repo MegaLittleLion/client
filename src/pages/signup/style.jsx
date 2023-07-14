@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const BodyDiv = styled.div`
     form{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         p{
             display: block;
             width: 50%;
@@ -23,12 +24,27 @@ export const BodyDiv = styled.div`
             margin-bottom: 30px;
         }
         p:nth-child(2) input{
-
+            width:25%;
+            margin-right: 1%;
+        }
+        p:nth-child(2) span{
+            border: 3px solid #FFD732;
+            font-size: 90%;
+            color:#000;
+            font-weight: 400;
+            cursor: pointer;
+            box-sizing: border-box;
         }
         p:nth-child(3){
             margin-bottom: 30px;
         }
         p:nth-child(3) input{
+
+        }
+        p:nth-child(4){
+            margin-bottom: 30px;
+        }
+        p:nth-child(4) input{
 
         }
         button{
