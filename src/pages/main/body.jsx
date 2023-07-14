@@ -24,8 +24,17 @@ function Body() {
         <Title>
 
             <div id='mainpage_total_box'>
-                <h1 id='mainpage_recent_movie_box'>
-                    <p id='mainpage_recent_movie_article'>🎥 오늘의 영화 🎥</p>
+                <h1 id='mainpage_movie_box'>
+                    <p id='mainpage_movie_article'>🎥 오늘의 영화 🎥</p>
+
+                    <form>
+                        <p id='search_movie' >
+                            <input type="text" name="" id="seach_movie_text"/>
+                        </p>
+                    </form>
+                    
+
+
 
                     <div id= 'mainpage_api'>
 

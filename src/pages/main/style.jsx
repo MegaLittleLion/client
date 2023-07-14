@@ -11,12 +11,12 @@ export const Title = styled.h1`
         background-color: #FFD732;
 
     }
-    #mainpage_recent_movie_box{
+    #mainpage_movie_box{
         margin-top: 0px;
         margin-bottom: 5px;
 
     }
-    #mainpage_recent_movie_article{
+    #mainpage_movie_article{
         margin: 0px;
         font-size: 35px;
         color: #343101;
@@ -25,14 +25,21 @@ export const Title = styled.h1`
         justify-content: center;
 
     }
-    #mainpage_second_box{
-        margin-top: 5px;
+    #search_movie{
+        margin: 0px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
 
     }
-    #mainpage_popular_movie_box{
 
+    #seach_movie_text{
+        font-size: 20px;
     }
 
+    #mainpage_api{
+
+    }
 `
 
 
