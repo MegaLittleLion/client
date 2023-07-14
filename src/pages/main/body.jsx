@@ -1,12 +1,16 @@
-
 import {Title} from './style'
+
 
 function Body(){
 
 
     return(
+        
+        <>
+        
+        </>
 
-        <></>
+
     );
 
 }
