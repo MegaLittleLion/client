@@ -7,8 +7,8 @@ const serverApi = axios.create({
 });
 
 // 회원가입 api
-export const signupApi = async() =>{
-    await serverApi.post(`https://api.hufs-likelion-movie.kro.kr/movies`).then((response) => {
+export const signupApi = async (id, nickname, pw, pwCheck) => {
+    await serverApi.post(`https://port-0-test-mv-kvmh2mlk2besp7.sel4.cloudtype.app/members/signup/`,{"username":id, "nickname":nickname, "password":pw, "pwcheck":pwCheck}).then((response) => {
         console.log(response);
     })
 }
