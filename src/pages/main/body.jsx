@@ -6,17 +6,33 @@ function Body() {
     const [movies, setMovies] = useState([]);
     
     const takeMovies = async () => {
-        const data = await getMovies();
-        setMovies(data);
+        const newMovies = await getMovies();
+        setMovies(newMovies);
     };
 
     useEffect(() => {
         takeMovies();
     }, []);
 
-    // api를 통해 영화 리스트를 가져온 이후
+    const makeMovies = (movies) => {
+        const mainpage_api = document.getElementById('mainpage_api');
+        const orderedMovies = [];
+
+        for (let i=0; i<movies.length-4; i+=4){
+            let currMovies = [];
+            for (let j=i; j<i+4; j++){
+                const movieTitle = movies[j].title_kor;
+                const movieImg = movies[j].poster_url;
+                currMovies.push([movieTitle, movieImg]);
+            }
+            orderedMovies.push(currMovies);
+        }
+
+        console.log(orderedMovies);
+    }
+
     if (movies.length !== 0){
-        console.log(movies);
+        makeMovies(movies);
     }
 
     return (
@@ -29,11 +45,7 @@ function Body() {
 
                     <div id= 'mainpage_api'>
 
-                        
-
                     </div>
-
-
                 </h1>
 
 

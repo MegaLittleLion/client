@@ -4,7 +4,9 @@ function Body() {
     
     const handleSubmit = async(e) => {
         e.preventDefault();
-        await loginApi();
+        const id = e.target[0].value;
+        const pw = e.target[1].value;
+        console.log(id, pw);
     }
 
     return(
