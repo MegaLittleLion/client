@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const BodyDiv = styled.div`
+    margin-top: 100px;
+    margin-bottom: 100px;
     form{
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         p{  

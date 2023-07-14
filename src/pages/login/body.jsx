@@ -6,7 +6,7 @@ function Body() {
         e.preventDefault();
         const id = e.target[0].value;
         const pw = e.target[1].value;
-        console.log(id, pw);
+        loginApi(id, pw);
     }
 
     return(
