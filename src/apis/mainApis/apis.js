@@ -8,8 +8,9 @@ const serverApi = axios.create({
 
 
 export const getMovies = async () => {
+    let movies = [];
     await serverApi.get(`https://api.hufs-likelion-movie.kro.kr/movies`).then((response) => {
-        const test = response.data.movies;
-        console.log(response);
+        movies = response.data.movies;
     })
+    return movies;
 };

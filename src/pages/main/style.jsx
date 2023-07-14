@@ -8,7 +8,7 @@ export const Title = styled.h1`
 
         margin: 50px;
         margin-top: 5px;
-        background-color: #ffea96;
+        background-color: #FFD732;
 
     }
     #mainpage_recent_movie_box{
@@ -18,7 +18,11 @@ export const Title = styled.h1`
     }
     #mainpage_recent_movie_article{
         margin: 0px;
-        font-size: 20px;
+        font-size: 35px;
+        color: #343101;
+
+        display: flex;
+        justify-content: center;
 
     }
     #mainpage_second_box{
