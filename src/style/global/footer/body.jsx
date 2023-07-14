@@ -6,7 +6,7 @@ function Body() {
     return (
         <Footer>
             <Title>
-                MegaLittle
+                Mega little lion
             </Title>
         </Footer>
     );
