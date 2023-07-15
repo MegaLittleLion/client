@@ -27,7 +27,7 @@ function Body() {
 
 
     const getDetail = async () => {
-        const nowDetail = await detailApi();
+        const nowDetail = await detailApi(11);
         setData(nowDetail[0]);
         setStaff(nowDetail[1]);
     }
@@ -69,9 +69,11 @@ function Body() {
                 </div>
             </Title>
             <Infos>
-                <img
-                    src="https://movie-phinf.pstatic.net/20220714_114/1657780525423jmTpw_JPEG/movie_image.jpg?type=m203_290_2">
-                </img>
+                <div id='image'>
+                    <img
+                        src={data.poster_url}>
+                    </img>
+                </div>
                 <div class='v-line'>
                     <div>
                         <p>- 관람객 평점: {data.rating_aud}</p>
@@ -81,7 +83,7 @@ function Body() {
                         <p>- 상영 시간: {data.showtimes}</p>
                         <p>- 개봉일: {data.release_date}</p>
                         <h2>줄거리</h2>
-                        <p>{data.summary}</p>
+                        <p id='summary'>{data.summary}</p>
                     </div>
                 </div>
             </Infos>
@@ -90,7 +92,7 @@ function Body() {
 
                 </article>
                 <div class='v-line'>
-                    <h2 id = 'peopleinfo' style={{ marginLeft: '10px' }}>인물 정보</h2>
+                    <h2 id='peopleinfo' style={{ marginLeft: '10px' }}>인물 정보</h2>
                 </div>
                 <div style={{ display: 'flex' }}>
                     {staff.length > 0 && staff.map(people => (
@@ -111,7 +113,7 @@ function Body() {
                             <p>{comment.post}</p>
                         </div>
                     )}
-                    <input 
+                    <input
                         id='inputed'
                         placeholder="댓글을 입력하세요."
                     />

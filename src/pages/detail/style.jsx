@@ -68,22 +68,34 @@ export const Infos = styled.div`
         margin-left:30px;
         margin-top: 10px;
         font-weight: normal;
-        height: 420px;
-   };
+        /* height: 420px; */
+    };
+    #image{
+        margin-top: auto;
+        margin-bottom: auto;
+
+    };
     img{
         height:420px;
         width:auto;
+        /* margin-top:  */
     };
     h2{
         margin-top: 40px;
     };
+    #summary{
+        word-break: keep-all;
+        text-align: justify;
+        
+    }
     p{
         font-size:17px;
         margin-top:10px;
     };
     .v-line {
     border-left : thick solid #ffd732;
-    height : 400px;
+    height : auto;
+    margin-bottom: 10px;
     };
 `
 
@@ -93,6 +105,9 @@ export const Staff = styled.div`
     .v-line {
     border-left : thick solid #ffd732;
     height : 35px;
+    margin-bottom: 10px;
+    };
+    #peopleinfo{
     };
 
 `
