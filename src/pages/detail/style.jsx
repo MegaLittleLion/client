@@ -78,7 +78,6 @@ export const Infos = styled.div`
     img{
         height:420px;
         width:auto;
-        /* margin-top:  */
     };
     h2{
         margin-top: 40px;

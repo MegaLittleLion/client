@@ -5,7 +5,7 @@ import { Staff } from "./style";
 import { Infos } from "./style";
 import { Whole } from "./style";
 import { Comment } from "./style";
-
+import { useParams } from "react-router-dom";
 
 function People({ people }) {
     return (
@@ -18,16 +18,15 @@ function People({ people }) {
     );
 }
 
-
-
 function Body() {
     const [data, setData] = useState('');
     const [staff, setStaff] = useState('');
     const [comment, setComment] = useState('');
 
+    const movieId = useParams().movieId;
 
     const getDetail = async () => {
-        const nowDetail = await detailApi(11);
+        const nowDetail = await detailApi(movieId);
         setData(nowDetail[0]);
         setStaff(nowDetail[1]);
     }
@@ -77,7 +76,10 @@ function Body() {
                 <div class='v-line'>
                     <div>
                         <p>- 관람객 평점: {data.rating_aud}</p>
-                        <p>- 평론가 평점: {data.rating_cri} </p>
+                        <p>- 평론가 평점: </p>
+                        {/* {data.rating_cri.length === 0 ? (
+                            <p>x</p>
+                        ) : (<p>{data.rating_cri}</p>)} */}
                         <p>- 네티즌 평점: {data.rating_net}</p>
                         <p>- 장르: {data.genre}</p>
                         <p>- 상영 시간: {data.showtimes}</p>
