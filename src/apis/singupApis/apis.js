@@ -8,7 +8,7 @@ const serverApi = axios.create({
 
 // 회원가입 api
 export const signupApi = async (id, nickname, pw, pwCheck) => {
-    await serverApi.post(`https://port-0-test-mv-kvmh2mlk2besp7.sel4.cloudtype.app/members/signup/`,{"username":id, "nickname":nickname, "password":pw, "pwcheck":pwCheck}).then((response) => {
+    await serverApi.post(`https://port-0-test-mv-kvmh2mlk2besp7.sel4.cloudtype.app/members/signup/`,{"username":id, "nickname":nickname, "password1":pw, "password2":pwCheck}).then((response) => {
         console.log(response);
     })
 }

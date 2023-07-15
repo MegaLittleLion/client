@@ -46,7 +46,7 @@ export const Title = styled.h1`
             transition: all 0.3s;
             display: block;
             border-radius: 15px;
-            width: 25%;
+            width: 23%;
             text-align: center;
             cursor: pointer;
                 h1{ 

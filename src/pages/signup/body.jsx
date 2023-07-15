@@ -9,9 +9,10 @@ function Body() {
         e.preventDefault();
         const id = e.target[0].value;
         const nickname = e.target[1].value;
-        const pw = e.target[2].value;
-        const pwCheck = e.target[3].value;
-        signupApi(id, nickname, pw, pwCheck);
+        const password1 = e.target[2].value;
+        const password2 = e.target[3].value;
+        console.log(id, nickname, password1, password2);
+        signupApi(id, nickname, password1, password2);
     }
 
     return (
