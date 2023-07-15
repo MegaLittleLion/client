@@ -125,7 +125,7 @@ function Body() {
                         <h2 id='commentTitle'>댓글</h2>
                     </div>
                     {comment.length === 0 ? (
-                        <p>댓글이 없지롱</p>
+                        <p>등록된 댓글이 없습니다.</p>
                     ) : (
                         <div class='Oncomment'>
                             <p id="username">{comment.username}</p>
