@@ -56,7 +56,7 @@ export const Comment = styled.div`
 export const Title = styled.div`
     .v-line {
     border-left : thick solid #ffd732;
-    height : 110px;
+    height : auto;
     }
     .div {
         margin-left:30px;
