@@ -9,8 +9,8 @@ const serverApi = axios.create({
 
 export const getMovies = async () => {
     let movies = [];
-    await serverApi.get(`https://api.hufs-likelion-movie.kro.kr/movies`).then((response) => {
-        movies = response.data.movies;
+    await serverApi.get(`https://port-0-django-movie-kvmh2mlk3c9y6r.sel4.cloudtype.app/movie/`).then((response) => {
+        movies = response.data;
     })
     return movies;
 };
