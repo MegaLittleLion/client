@@ -10,18 +10,24 @@ function Body() {
         const newMovies = await getMovies();
         setMovies(newMovies);
     };
+    const [loginBtn, setLoginBtn] = useState('');
+    const takeLoginBtn = () => {
+        setLoginBtn(document.getElementById('loginbutton'));
+    }
 
     useEffect(() => {
         takeMovies();
+        takeLoginBtn();
     }, []);
     
-    const nickname = sessionStorage.getItem('nickname');
-    const target = document.getElementById('loginbutton');
-    if (nickname !== null) {
-        target.innerText = `${nickname}님 안녕하세요`;
-    }
-    else{
-        target.innerText = '로그인';
+    if (loginBtn) {
+        const nickname = sessionStorage.getItem('nickname');
+        if(nickname !== null) {
+            loginBtn.innerText = `${nickname}님 안녕하세요`;
+        }
+        else{
+            loginBtn.innerText = '로그인';
+        }
     }
 
     const makeMovies = (movies) => {
