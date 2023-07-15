@@ -12,7 +12,7 @@ export const Comment = styled.div`
     margin-top: 50px;
     margin-bottom: 50px;
     input {
-        width: 1000px;
+        width: 83%;
         height: 50px; 
     }
     #inputed{
@@ -20,7 +20,7 @@ export const Comment = styled.div`
         padding-left: 2%;
     }
     button {
-        width : 180px;
+        width : 15%;
         height: 55px;
         margin-left: 20px
     }

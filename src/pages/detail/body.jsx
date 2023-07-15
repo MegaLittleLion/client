@@ -36,11 +36,26 @@ function Body() {
         setComment(nowComment);
     }
 
-
+    const [loginBtn, setLoginBtn] = useState('');
+    const takeLoginBtn = () => {
+        setLoginBtn(document.getElementById('loginbutton'));
+    }
+    
     useEffect(() => {
         getDetail();
         getComment();
+        takeLoginBtn();
     }, [])
+
+    if (loginBtn) {
+        const nickname = sessionStorage.getItem('nickname');
+        if(nickname !== null) {
+            loginBtn.innerText = `${nickname}님 안녕하세요`;
+        }
+        else{
+            loginBtn.innerText = '로그인';
+        }
+    }
 
     // console.log(staff)
 
