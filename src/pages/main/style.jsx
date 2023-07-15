@@ -18,8 +18,8 @@ export const Title = styled.h1`
     }
     #mainpage_movie_article{
         margin: 0px;
-
-        
+        padding-top: 50px;
+        margin-bottom: 50px;
         font-size: 35px;
         color: #343101;
 
