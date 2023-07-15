@@ -1,12 +1,15 @@
 import { BodyDiv } from "./style";
 import { loginApi } from "../../apis/loginApis/apis";
+import { useNavigate } from "react-router-dom";
 function Body() {
     
+    const navigate = useNavigate();
+
     const handleSubmit = async(e) => {
         e.preventDefault();
         const id = e.target[0].value;
         const pw = e.target[1].value;
-        loginApi(id, pw);
+        loginApi(navigate, id, pw);
     }
 
     return(
