@@ -19,7 +19,7 @@ export const Title = styled.h1`
     #mainpage_movie_article{
         margin: 0px;
         padding-top: 50px;
-        margin-bottom: 50px;
+        margin-bottom: 0px;
         font-size: 35px;
         color: #343101;
 
@@ -27,6 +27,7 @@ export const Title = styled.h1`
         justify-content: center;
 
     }
+
     #mainpage_second_box{
         margin-top: 5px;
 
@@ -34,7 +35,26 @@ export const Title = styled.h1`
     #mainpage_popular_movie_box{
 
     }
+
+    #mainpage_search{
+        width: 50%;
+        text-align: center;
+        margin: 0 auto;
+
+        border-radius: 10px;
+
+        box-sizing: border-box;
+        
+    }
+
+    #mainpage_search_title{
+        font-size: 20px;
+    }
+    #mainpage_search_button{
+        font-size: 20px;
+    }
     #mainpage_api{
+        margin-top: 30px;
         
     }
 

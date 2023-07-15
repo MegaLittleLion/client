@@ -88,6 +88,11 @@ function Body() {
             <div id='mainpage_total_box'>
                 <h1 id='mainpage_movie_box'>
                     <p id='mainpage_movie_article'>🎥 오늘의 영화 🎥</p>
+                    
+                    <form id='mainpage_search' >
+                        <input id='mainpage_search_title' type='text' placeholder='영화를 검색하세요.'></input>
+                        <button id='mainpage_search_button' type='submit'>검색</button>
+                    </form>
 
                     <div id='mainpage_api' onClick={handleOnClick}>
                         
