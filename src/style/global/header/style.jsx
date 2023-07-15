@@ -31,11 +31,20 @@ const Header = styled.h1`
 
         font-size: 20px;
     }
-    #signupbutton, #loginbutton{
+
+    #signupbutton{
         text-decoration: none;
         color: #666565;
         font-size: 120%;
         margin-bottom: 10px;
+    }
+
+    #loginbutton{
+        text-decoration: none;
+        color: #666565;
+        font-size: 120%;
+        margin-bottom: 10px;
+        cursor: pointer;
     }
 
 `

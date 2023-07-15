@@ -9,7 +9,7 @@ function App() {
     <Router>
       <Routes>
         <Route path={`/`} element={<Main />}></Route>
-        <Route path={`/detail`} element={<Detail />}></Route>
+        <Route path={`/detail/:movieId`} element={<Detail />}></Route>
         <Route path={`/signup`} element={<Signup />}></Route>
         <Route path={`/login`} element={<Login />}></Route>
       </Routes>

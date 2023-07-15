@@ -1,7 +1,19 @@
 import Header from './style';
-import {Link} from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 function Body() {
+    const navigate = useNavigate();
+
+    const handleOnClick = (e) => {
+        
+        const order = document.getElementById('loginbutton').innerText;
+        console.log(order);
+
+        if (order === '로그인'){
+            navigate(`/login`);
+        }
+
+    }
     return (
         <div>
             <Header>
@@ -13,9 +25,9 @@ function Body() {
             </h1>
 
             <h2>
-                <Link to="/login" id='loginbutton'>
+                <p id='loginbutton' onClick={handleOnClick}>
                     로그인
-                </Link>
+                </p>
                 <Link to="/signup" id='signupbutton'>
                     회원가입
                 </Link>
