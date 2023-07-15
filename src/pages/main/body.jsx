@@ -79,11 +79,9 @@ function Body() {
                     <p id='mainpage_movie_article'>🎥 오늘의 영화 🎥</p>
 
                     <div id= 'mainpage_api'>
-
+                        
                     </div>
                 </h1>
-
-
             </div>
 
 

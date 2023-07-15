@@ -41,11 +41,13 @@ export const Title = styled.h1`
     #mainpage_api div{
         display: flex;
         justify-content: space-around;
+        width: 100%;
         div{
             transition: all 0.3s;
             display: block;
             border-radius: 15px;
-            width: 200px;
+            width: 25%;
+            text-align: center;
                 h1{ 
                     overflow: hidden;
                     text-overflow: ellipsis;
@@ -53,7 +55,6 @@ export const Title = styled.h1`
                     font-weight: bold;
                     text-align: center;
                     width:100%;
-
                     color: #595959
                 }
             
