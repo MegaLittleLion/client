@@ -11,7 +11,8 @@ export const loginApi = async (navigate, id, pw) => {
     await serverApi.post(`https://port-0-test-mv-kvmh2mlk2besp7.sel4.cloudtype.app/members/login/`,{"username":id, "password":pw}).then((response) => {
         const nickname = response.data.user.nickname;
         const jwt = response.data.access;
-        sessionStorage.setItem("jwtToken", jwt);
-        navigate(`/`, {state: {jwt:jwt, nickname:nickname}});
+        sessionStorage.setItem('jwt', jwt);
+        sessionStorage.setItem('nickname', nickname);
+        navigate(`/`);
     })
 }

@@ -14,6 +14,15 @@ function Body() {
     useEffect(() => {
         takeMovies();
     }, []);
+    
+    const nickname = sessionStorage.getItem('nickname');
+    const target = document.getElementById('loginbutton');
+    if (nickname !== null) {
+        target.innerText = `${nickname}님 안녕하세요`;
+    }
+    else{
+        target.innerText = '로그인';
+    }
 
     const makeMovies = (movies) => {
         const mainpage_api = document.getElementById('mainpage_api');

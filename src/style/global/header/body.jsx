@@ -1,5 +1,5 @@
 import Header from './style';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Body() {
     const navigate = useNavigate();
@@ -7,13 +7,20 @@ function Body() {
     const handleOnClick = (e) => {
         
         const order = document.getElementById('loginbutton').innerText;
-        console.log(order);
-
         if (order === '로그인'){
             navigate(`/login`);
         }
+        else{
+            const check = window.confirm('로그아웃 하시겠습니까?');
+            if (check) {
+                sessionStorage.removeItem('jwt');
+                sessionStorage.removeItem('nickname');
+                navigate(`/`);
+            }
+        }
 
     }
+
     return (
         <div>
             <Header>
