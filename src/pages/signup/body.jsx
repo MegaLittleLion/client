@@ -7,6 +7,9 @@ function Body() {
         const nickname = document.getElementById('nickname').value;
         duplicateApi(nickname);
     }
+    const Duplicated = (password1, password2) => {
+        return password1 === password2;
+    }
     const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -14,7 +17,12 @@ function Body() {
         const nickname = e.target[1].value;
         const password1 = e.target[2].value;
         const password2 = e.target[3].value;
-        signupApi(navigate, id, nickname, password1, password2);
+        if (! Duplicated(password1, password2)){
+            alert('비밀번호가 서로 다릅니다.');
+        }
+        else{
+            signupApi(navigate, id, nickname, password1, password2);
+        }
     }
 
     return (
