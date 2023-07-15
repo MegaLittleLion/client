@@ -12,3 +12,10 @@ export const signupApi = async (id, nickname, pw, pwCheck) => {
         console.log(response);
     })
 }
+
+// 중복확인 api
+export const duplicateApi = async (nickname) => {
+    await serverApi.post(`https://port-0-test-mv-kvmh2mlk2besp7.sel4.cloudtype.app/members/uniquecheck/nickname/`,{"nickname":nickname}).then((response) => {
+        console.log(response);
+    })
+}
