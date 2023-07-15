@@ -49,11 +49,14 @@ function Body() {
 
     if (loginBtn) {
         const nickname = sessionStorage.getItem('nickname');
+        const signUpBtn = document.getElementById('signupbutton');
         if(nickname !== null) {
             loginBtn.innerText = `${nickname}님 안녕하세요`;
+            signUpBtn.style.display = 'none';
         }
         else{
             loginBtn.innerText = '로그인';
+            signUpBtn.style.display = 'block';
         }
     }
 
