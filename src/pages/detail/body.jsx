@@ -55,6 +55,7 @@ function Body() {
         e.preventDefault();
         // console.log(e.target[0].value);
         const comment = e.target[0].value;
+        
     }
 
     return (

@@ -16,8 +16,6 @@ export const detailApi = async (movieid) => {
     await serverApi.get(`https://port-0-django-movie-kvmh2mlk3c9y6r.sel4.cloudtype.app/movie/${movieid}/`).then((response) => {
         detail = response.data;
         staff = response.data.staff;
-
-        console.log(response);
     })
     return [detail, staff, staff_name, staff_role, staff_img];
 }
