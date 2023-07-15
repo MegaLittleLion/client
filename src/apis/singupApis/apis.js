@@ -7,15 +7,21 @@ const serverApi = axios.create({
 });
 
 // 회원가입 api
-export const signupApi = async (id, nickname, pw, pwCheck) => {
+export const signupApi = async (navigate, id, nickname, pw, pwCheck) => {
     await serverApi.post(`https://port-0-test-mv-kvmh2mlk2besp7.sel4.cloudtype.app/members/signup/`,{"username":id, "nickname":nickname, "password1":pw, "password2":pwCheck}).then((response) => {
-        console.log(response);
+        if(response.status === 201){
+            alert('회원가입이 완료되었습니다.');
+            navigate(`/login`);
+        }
     })
 }
 
 // 중복확인 api
 export const duplicateApi = async (nickname) => {
     await serverApi.post(`https://port-0-test-mv-kvmh2mlk2besp7.sel4.cloudtype.app/members/uniquecheck/nickname/`,{"nickname":nickname}).then((response) => {
-        console.log(response);
+        const check = response.data.detail;
+        if (check === 'available nickname'){
+            alert('사용가능한 닉네임입니다.');
+        }
     })
 }

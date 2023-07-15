@@ -1,19 +1,20 @@
 import { BodyDiv } from "./style";
 import { signupApi, duplicateApi } from "../../apis/singupApis/apis";
+import { useNavigate } from "react-router-dom";
 function Body() {
     const handleDuplicated = (e) => {
         e.preventDefault();
         const nickname = document.getElementById('nickname').value;
         duplicateApi(nickname);
     }
-
+    const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
         const id = e.target[0].value;
         const nickname = e.target[1].value;
         const password1 = e.target[2].value;
         const password2 = e.target[3].value;
-        signupApi(id, nickname, password1, password2);
+        signupApi(navigate, id, nickname, password1, password2);
     }
 
     return (
