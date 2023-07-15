@@ -48,6 +48,7 @@ export const Title = styled.h1`
             border-radius: 15px;
             width: 25%;
             text-align: center;
+            cursor: pointer;
                 h1{ 
                     overflow: hidden;
                     text-overflow: ellipsis;
