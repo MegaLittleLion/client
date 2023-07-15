@@ -13,11 +13,11 @@ export const detailApi = async (movieid) => {
     let staff_name = [];
     let staff_role = [];
     let staff_img = [];
-    await serverApi.get(`https://api.hufs-likelion-movie.kro.kr/movies/1`).then((response) => {
-        detail = response.data;
-        staff = response.data.staff;
+    await serverApi.get(`https://port-0-django-movie-kvmh2mlk3c9y6r.sel4.cloudtype.app/movie/1/`).then((response) => {
+        // detail = response.data;
+        // staff = response.data.staff;
 
-        // console.log(staff_img);
+        console.log(response);
     })
     return [detail, staff, staff_name, staff_role, staff_img];
 }

@@ -37,8 +37,10 @@ export const Comment = styled.div`
     .Oncomment{
         display: flex;
     }
-    .username{
-        margin-left: 20px;
+    #username{
+        margin-left: 10px;
+        margin-right: 40px;
+        font-weight: bold;
     }
     #commentTitle {
         margin-left: 10px;
@@ -86,10 +88,11 @@ export const Infos = styled.div`
 `
 
 export const Staff = styled.div`
-    margin-top: 50px;
+   margin-top: 50px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     .v-line {
     border-left : thick solid #ffd732;
     height : 35px;
-    }:
+    };
+
 `

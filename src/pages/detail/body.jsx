@@ -90,7 +90,7 @@ function Body() {
 
                 </article>
                 <div class='v-line'>
-                    <h2 style={{ marginLeft: '10px' }}>인물 정보</h2>
+                    <h2 id = 'peopleinfo' style={{ marginLeft: '10px' }}>인물 정보</h2>
                 </div>
                 <div style={{ display: 'flex' }}>
                     {staff.length > 0 && staff.map(people => (
@@ -107,7 +107,7 @@ function Body() {
                         <p>댓글이 없지롱</p>
                     ) : (
                         <div class='Oncomment'>
-                            <p class="username                                                                      ">{comment.username}</p>
+                            <p id="username">{comment.username}</p>
                             <p>{comment.post}</p>
                         </div>
                     )}
@@ -115,10 +115,9 @@ function Body() {
                         id='inputed'
                         placeholder="댓글을 입력하세요."
                     />
-                    <button type="submit">댓글</button>
+                    <button type="submit">등록</button>
                 </form>
             </Comment>
-
         </Whole>
     );
 };
