@@ -12,6 +12,7 @@ const Header = styled.h1`
     };
 
     #homebutton{
+       
         color: #666565;
         font-size: 30px;
 

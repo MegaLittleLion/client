@@ -49,9 +49,18 @@ export const Title = styled.h1`
 
     #mainpage_search_title{
         font-size: 20px;
+        border-radius: 5px;
+        ;
     }
     #mainpage_search_button{
+        margin-left: 10px;
+
         font-size: 20px;
+        background-color: #979700;
+        color: white;
+
+        border: none;
+        border-radius: 10px;
     }
     #mainpage_api{
         margin-top: 30px;
