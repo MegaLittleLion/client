@@ -31,30 +31,34 @@ function Body() {
         setStaff(nowDetail[1]);
     }
 
-    const getComment = async () => {
-        const nowComment = await commentApi();
+    const handleOnSubmit = async (e) => {
+        e.preventDefault();
+        // console.log(e.target[0].value);
+        const comment = e.target[0].value;
+        const nowComment = await commentApi(movieId, comment);
         setComment(nowComment);
+
     }
 
     const [loginBtn, setLoginBtn] = useState('');
     const takeLoginBtn = () => {
         setLoginBtn(document.getElementById('loginbutton'));
     }
-    
+
     useEffect(() => {
         getDetail();
-        getComment();
+        // getComment();
         takeLoginBtn();
     }, [])
 
     if (loginBtn) {
         const nickname = sessionStorage.getItem('nickname');
         const signUpBtn = document.getElementById('signupbutton');
-        if(nickname !== null) {
+        if (nickname !== null) {
             loginBtn.innerText = `${nickname}님 안녕하세요`;
             signUpBtn.style.display = 'none';
         }
-        else{
+        else {
             loginBtn.innerText = '로그인';
             signUpBtn.style.display = 'block';
         }
@@ -67,14 +71,6 @@ function Body() {
     //     const result = staff[i].name
     //     const staffInfo = document.getElementById('staffInfo');
     // }
-
-
-    const handleOnSubmit = (e) => {
-        e.preventDefault();
-        // console.log(e.target[0].value);
-        const comment = e.target[0].value;
-        
-    }
 
     return (
         <Whole>
@@ -94,13 +90,15 @@ function Body() {
                 </div>
                 <div class='v-line'>
                     <div>
-                        <p>- 관람객 평점: {data.rating_aud}</p>
-                        <p>- 평론가 평점: </p>
-                        {/* {data.rating_cri.length === 0 ? (
-                            <p>x</p>
-                        ) : (<p>{data.rating_cri}</p>)} */}
-                        <p>- 네티즌 평점: {data.rating_net}</p>
-                        <p>- 장르: {data.genre}</p>
+                        {data.rating_aud === '' ? (
+                            <p>- 관람객 평점: x</p>
+                        ) : (<p>- 관람객 평점: {data.rating_aud}</p>)}
+                        {data.rating_cri === '' ? (
+                            <p>- 평론가 평점: x</p>
+                        ) : (<p>- 평론가 평점: {data.rating_cri}</p>)}
+                        {data.rating_net === '' ? (
+                            <p>- 네티즌 평점: x</p>
+                        ) : (<p>- 네티즌 평점: {data.rating_net}</p>)}                        <p>- 장르: {data.genre}</p>
                         <p>- 상영 시간: {data.showtimes}</p>
                         <p>- 개봉일: {data.release_date}</p>
                         <h2>줄거리</h2>

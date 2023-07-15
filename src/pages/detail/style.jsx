@@ -12,17 +12,22 @@ export const Comment = styled.div`
     margin-top: 50px;
     margin-bottom: 50px;
     input {
-        width: 83%;
+        width: 81%;
         height: 50px; 
+        margin-right: 2%;
     }
     #inputed{
         box-sizing: border-box;
         padding-left: 2%;
     }
     button {
-        width : 15%;
+        width : 17%;
         height: 55px;
-        margin-left: 20px
+        margin-left: 10px
+        display: inline-block;
+        /* border: none; */
+        background-color: #FCF5DF;
+        border-color: #ffd732;
     }
     h2 {
         margin-bottom: 40px;
@@ -30,6 +35,7 @@ export const Comment = styled.div`
     .v-line {
         border-left : thick solid #ffd732;
         height : 35px;
+        margin-bottom: 40px;
     }
     p {
         margin-bottom: 20px;
@@ -50,7 +56,7 @@ export const Comment = styled.div`
 export const Title = styled.div`
     .v-line {
     border-left : thick solid #ffd732;
-    height : 100px;
+    height : 110px;
     }
     .div {
         margin-left:30px;
