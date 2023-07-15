@@ -14,3 +14,11 @@ export const getMovies = async () => {
     })
     return movies;
 };
+
+export const searchMovies = async(title_kor) => {
+    let movies = [];
+    await serverApi.get(`https://port-0-django-movie-kvmh2mlk3c9y6r.sel4.cloudtype.app/movie/list/search/?title_kor=${title_kor}`).then((response) => {
+        movies = response.data;
+    })
+    return movies;
+};
